@@ -1,4 +1,5 @@
-import Playerlist from './Component/Playerlist';
+import './App.css';
+import Playerlist from './Pages/Playerlist';
 
 function App() {
   return (
