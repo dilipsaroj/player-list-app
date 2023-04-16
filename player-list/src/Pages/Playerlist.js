@@ -72,13 +72,13 @@ const Playerlist = () => {
   return (
    <div className='wrapper'>
       <div className=" row form-group filter_content col-lg-12">
-        <div className='col-lg-4 col-md-4 col-sm-4'>
+        <div className='col-lg-4 col-md-4 col-sm-4 col-12'>
           <input type="email" className="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter TName or PFName" value={inputValue} onChange={(e) => OnChangeInput(e)} />
         </div>
-        <div className='col-lg-1 col-md-1 col-sm-1'>
+        <div className='col-lg-1 col-md-1 col-sm-1 col-4'>
           <CustomButton className="btn" onClick={() => onSubmit()}>Submit</CustomButton>
         </div>
-        <div className='col-lg-1 col-md-1 col-sm-1'>
+        <div className='col-lg-1 col-md-1 col-sm-1 col-4'>
           <CustomButton className="btn" onClick={() => refreshHandler()}>Reset</CustomButton>
         </div>
       </div>
