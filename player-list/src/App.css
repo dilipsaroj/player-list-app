@@ -7,13 +7,19 @@
 .wrapper{
   max-width: 1400px;
   margin: 0 auto;
+  background: #bbb;
 }
-.main_content{
+.wrapper .main_content{
+  padding: 30px;
   width: 100%;
   float: left;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background: #bbb;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #fff;
 }
 .card{
   width: 48%;
@@ -25,6 +31,7 @@
   box-shadow: 10px 10px 10px -7px rgba(0,0,0,0.75);
   border-radius: 15px !important;
   padding: 35px 20px !important;
+  background: repeating-linear-gradient(20deg, black, transparent 100px);
 }
 .input{
   border-radius: 5px !important;
@@ -36,4 +43,24 @@
 .filter_content{
   align-items: center !important;
   padding: 20px;
+}
+.main_img_style{
+  width: 200px;
+  height: 200px;
+}
+img.img_style{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width:768px) {
+  .card{
+    width: 100%;
+  }
+  .main_img_style{
+    width: 140px;
+    height: 140px;
+  }
 }

@@ -72,18 +72,17 @@ const Playerlist = () => {
   return (
    <div className='wrapper'>
       <div className=" row form-group filter_content col-lg-12">
-        <div className='col-lg-4'>
+        <div className='col-lg-4 col-md-4 col-sm-4'>
           <input type="email" className="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter TName or PFName" value={inputValue} onChange={(e) => OnChangeInput(e)} />
         </div>
-        <div className='col-lg-1'>
+        <div className='col-lg-1 col-md-1 col-sm-1'>
           <CustomButton className="btn" onClick={() => onSubmit()}>Submit</CustomButton>
         </div>
-        <div className='col-lg-1'>
+        <div className='col-lg-1 col-md-1 col-sm-1'>
           <CustomButton className="btn" onClick={() => refreshHandler()}>Reset</CustomButton>
         </div>
-      
-    </div>
-    {
+      </div>
+      {
       playerlist.length > 0 ?
       <div className='main_content'>
       {playerlist.map((item) =>{
@@ -93,26 +92,26 @@ const Playerlist = () => {
           <div className='card'>  
           <div className='card_content'>
             <div>
-              <div style={{height:'200px', width:"200px"}} className='col-lg-12'>
-                  <img style={{height:'100%', width:"100%"}} src={`${process.env.PUBLIC_URL}/player-images/${item.Id}.jpg`} />
+              <div className='col-lg-12 main_img_style'>
+                  <img className="img_style" src={`${process.env.PUBLIC_URL}/player-images/${item.Id}.jpg`} />
               </div>
             </div>
             <div className='row'>
-              <div className='col-lg-6'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
                 <h5>{item.PFName ? item.PFName : "-"}</h5>                
                 <h6>Name</h6>
               </div>
-             <div className='col-lg-6'>
+             <div className='col-lg-6 col-md-6 col-sm-12'>
                 <h5>{item.SkillDesc ? item.SkillDesc: "-"}</h5>
                 <h6>Skill</h6>
               </div>
             </div>
             <div className='row'>
-              <div className='col-lg-6'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
                 <h5>${item.Value}</h5>
                 <h6>Value</h6>
               </div>
-              <div className='col-lg-6'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
                 {
                   item.UpComingMatchesList?.[0].CCode != "" && item.UpComingMatchesList?.[0].VsCCode != "" ?
                   <h5>{item.UpComingMatchesList?.[0].CCode}  vs.  {item.UpComingMatchesList?.[0].VsCCode}</h5>:
@@ -125,7 +124,7 @@ const Playerlist = () => {
             </div>
             <div className='row'>
               
-              <div className='col-lg-6'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
                 <h5>{ convertDate(item.UpComingMatchesList?.[0].MDate)}</h5>
                 <h6>Match Time</h6>
               </div>
@@ -136,12 +135,12 @@ const Playerlist = () => {
         )
       })}
 
-    </div>
-      : 
-      <div style={{width:'100%',float:'left',color:'black',textAlign:'center'}}>
-          <h4> No Record Found </h4>
-      </div>
-    }
+        </div>
+          : 
+          <div style={{width:'100%',float:'left',color:'black',textAlign:'center'}}>
+              <h4> No Record Found </h4>
+          </div>
+        }
 
     </div>  
   )
